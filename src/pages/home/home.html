@@ -6,9 +6,26 @@
   </ion-navbar>
 </ion-header>
 
-<ion-content padding>
-  The world is your oyster.
-  <p>
-    If you get lost, the <a href="http://ionicframework.com/docs/v2">docs</a> will be your guide.
-  </p>
+<ion-content padding [@flyInOutTrigger]>
+  <ion-grid>
+    <ion-card>
+      <ion-row align-items-center>
+        <ion-col>
+          <button #Activate ion-button full (click)="toggleState()">Activate</button>
+          <div [@slideInOut]="animationState">
+            <ion-item>
+              <!--<ion-label floating> Please enter your company domain</ion-label> -->
+              <ion-input id="companyId" placeholder="CompanyId" [(ngModel)]="userData.companyId" type="text"></ion-input>
+              <ion-icon (click)="Submit()" name="arrow-forward" item-right></ion-icon>
+            </ion-item>
+          </div>
+        </ion-col>
+      </ion-row>
+    </ion-card>
+    <ion-card>
+      <ion-row align-items-center>
+        <button #Demo ion-button full (click)="activateDemo()">Demo</button>
+      </ion-row>
+    </ion-card>
+  </ion-grid>
 </ion-content>
