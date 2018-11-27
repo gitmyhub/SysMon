@@ -18,7 +18,7 @@ export class HomePage implements OnInit{
   userData = {"companyId":""};
   animationState: String;
 
-  constructor(public navCtrl: NavController, private _licenseServer: licenseServer) {
+  constructor(public navCtrl: NavController, private _licenseServer: licenseServer) { 
     this.activateState = false;
     this.animationState = 'collapse';
   }
@@ -33,7 +33,7 @@ export class HomePage implements OnInit{
   openLink() {
   }
   Submit(){
-    console.log("Submit called"+this.userData.companyId);
+    console.log("Submit called "+this.userData.companyId);
     this._licenseServer.getData(this.userData.companyId);
   }
   activateDemo() {
