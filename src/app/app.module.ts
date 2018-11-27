@@ -8,6 +8,8 @@ import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
 
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import {  HttpClientModule} from '@angular/common/http';
+
 
 //Services
 import{licenseServer} from '../services/licenseServer';
@@ -18,6 +20,7 @@ import{licenseServer} from '../services/licenseServer';
     HomePage,
   ],
   imports: [
+    HttpClientModule,
     BrowserModule,
     BrowserAnimationsModule,
     IonicModule.forRoot(MyApp)
