@@ -1,0 +1,29 @@
+<ion-grid>
+	<ion-row justify-content-center>
+		<ion-col align-self-center size-md="6" size-lg="5" size-xs="12">
+			<div text-center>
+				<h4>{{connectionID}}-{{connectionName}}</h4>
+			</div>
+			<div padding>
+				<div *ngIf='showEmail; else showUserId'>
+				<ion-item>
+					<ion-input type="text" id="Email" [(ngModel)]="connection.Email" placeholder="Email"></ion-input>
+				</ion-item>
+				</div>
+				<ng-template #showUserId>
+						<ion-item>
+								<ion-input type="text" id="Username" [(ngModel)]="connection.UserName" placeholder="Username"></ion-input>
+						</ion-item>					
+				</ng-template>
+
+				<ion-item>
+					<ion-input type="password" id="Password" [(ngModel)]="connection.Password" placeholder="Password"></ion-input>
+				</ion-item>
+			</div>
+
+			<div padding>
+				<button ion-button block size="large" (click)='submit()'>Login</button>
+			</div>
+		</ion-col>
+	</ion-row>
+</ion-grid>
